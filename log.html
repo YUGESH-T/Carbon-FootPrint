@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Log Activity</title>
+  <!-- <link rel="stylesheet" href="styles.css"/> -->
+  <link rel="stylesheet" href="dasrk.css">
+  <!-- <link rel="stylesheet" href="sidebar.css"> -->
+  <script src="https://kit.fontawesome.com/62301ddb39.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f1f9f3;
+        color: #222;
+      }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 100vh;
+  background-color: #27ae60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  transition: width 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.expanded {
+  width: 200px;
+}
+
+.sidebar button#toggleBtn {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.8rem 1rem;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  gap: 10px;
+  width: 100%;
+}
+
+.sidebar nav ul li i {
+  color: rgb(0, 0, 0);
+}
+
+.sidebar .label {
+  display: none;
+  font-size: 0.9rem;
+}
+
+.sidebar.expanded .label {
+  display: inline;
+}
+
+      .container {
+        max-width: 600px;
+        margin: 3rem auto;
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.2rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+        color: #5e705e;
+      }
+      
+      .card {
+        background: #fff;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      }
+      
+      .tabs {
+        display: flex;
+        margin: 1rem 0;
+        gap: 1rem;
+      }
+      
+      .tab {
+        flex: 1;
+        padding: 0.6rem 1rem;
+        background-color: #e5f1e5;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      
+      .tab.active {
+        background-color: #d4f0d4;
+        border: 2px solid #64b56f;
+      }
+      
+      .transport-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+      }
+      
+      .option {
+        background: #f9f9f9;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.3s;
+      }
+      
+      .option span {
+        display: block;
+        font-size: 0.85rem;
+        color: #555;
+        margin-top: 0.3rem;
+      }
+      
+      .option.active {
+        border: 2px solid #4caf50;
+        background-color: #ecfcec;
+      }
+      
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      
+      input[type="range"] {
+        width: 100%;
+        margin: 0.5rem 0;
+      }
+      
+      .range-value {
+        display: block;
+        text-align: right;
+        font-weight: bold;
+        color: #2e7d32;
+      }
+      
+      .impact-summary {
+        display: flex;
+        flex-direction: column;
+        line-height: 0;
+        background: #e6f4e6;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+      }
+      
+      .impact-summary h4 {
+        margin-top: 0;
+      }
+      
+      .impact-summary strong {
+        color: #2e7d32;
+      }
+      
+      #lodge{
+        padding: 0.5rem 1rem;
+        border: none;
+        background: #1b4332e3;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        color: white;align-self: center;
+      }
+      
+  </style>
+</head>
+
+
+<body>
+
+  <!-- navpart -->
+
+          
+  <div class="container">
+    <aside class="sidebar" id="sidebar">
+      <button id="toggleBtn"><i class="fa-brands fa-pagelines"></i></button>
+      <nav>
+        <ul>
+          <li>
+            <span><a href="index.html"><i class="fa-solid fa-house"></i></span>
+            <span class="label">Home</span></a>
+          </li>
+          <li>
+            <span><a href="log.html"><i class="fa-solid fa-chart-pie"></i></span>
+            <span class="label">Statistics</span></a>
+          </li>
+          <li>
+            <span><a href="leaderboard.html"><i class="fa-solid fa-chart-column"></i></span>
+              <span class="label">Leaderboard</span></a></li>
+              <li>
+                <span><a href="Challenges.html"><i class="fa-solid fa-list-check"></i></span>
+                <span class="label">Challenges</span></a>
+              </li>
+          <li>
+            <span><a href="profile.html"><i class="fa-solid fa-user"></i></span>
+            <span class="label">Profile</span></a>
+          </li>
+          <li>
+              <button id="dark-mode" onclick="document.body.classList.toggle('dark-theme')" ><i class="fa-solid fa-moon"></i></button>
+              <span class="label">Dark-mode</span></a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <h1>Log Activity</h1>
+    <p class="subtitle">Track your daily environmental impact</p>
+
+    <div class="card">
+      <h2>Record Your Eco-Friendly Actions</h2>
+      <p>Log your daily habits to track your environmental footprint</p>
+
+      <div class="tabs">
+        <button class="tab active">Transport</button>
+        <button class="tab">Electricity</button>
+        <button class="tab">Consumption</button>
+      </div>
+
+      <!-- TRANSPORT SECTION -->
+<div class="section transport-section">
+  <h3>Mode of Transport</h3>
+  <div class="transport-options">
+    <button class="option active">🚴‍♂ Bicycle<br/><span>0 emissions</span></button>
+    <button class="option">🚶‍♂ Walking<br/><span>0 emissions</span></button>
+    <button class="option">🚌 Public Transit<br/><span>Low emissions</span></button>
+    <button class="option">🚗 Car<br/><span>High emissions</span></button>
+  </div>
+  <label for="distance">Distance (km)</label>
+  <input type="range" id="distance" name="distance" min="1" max="20" value="8" />
+  <span class="range-value">8 km</span>
+</div>
+
+<!-- ELECTRICITY SECTION -->
+<div class="section electricity-section" style="display:none">
+  <label for="kwh">Electricity Used (kWh)</label>
+  <input type="range" id="kwh" name="kwh" min="1" max="50" value="10" />
+  <span class="range-value kwh-value">10 kWh</span>
+</div>
+
+<!-- CONSUMPTION SECTION -->
+<div class="section consumption-section" style="display:none">
+  <p>Select eco-friendly actions you took today:</p>
+  <label><input type="checkbox" class="consumption" value="recycled" /> ♻ Recycled items</label><br/>
+  <label><input type="checkbox" class="consumption" value="plastic" /> 🚫 Avoided plastic</label><br/>
+  <label><input type="checkbox" class="consumption" value="local" /> 🥕 Bought local food</label>
+</div>
+
+<!-- 
+      <h3>Mode of Transport</h3>
+      <div class="transport-options">
+        <button class="option active">🚴‍♂ Bicycle<br/><span>0 emissions</span></button>
+        <button class="option">🚶‍♂ Walking<br/><span>0 emissions</span></button>
+        <button class="option">🚌 Public Transit<br/><span>Low emissions</span></button>
+        <button class="option">🚗 Car<br/><span>High emissions</span></button>
+      </div> -->
+
+      <!-- <label for="distance">Distance (km)</label>
+      <input type="range" id="distance" name="distance" min="1" max="20" value="8" />
+      <span class="range-value">8 km</span> -->
+
+      <div class="impact-summary">
+        <h4>Impact Summary</h4>
+        <p>CO<sub>2</sub> Saved: <strong>1.6 kg</strong></p>
+        <p>Eco Points: <strong>8 pts</strong></p>
+        <button id="lodge">Submit</button>
+      </div>
+    </div>
+  </div>
+  <script src="lodge.js"></script>
+  <!-- <script src="app.js"></script> -->
+</body>
+</html>

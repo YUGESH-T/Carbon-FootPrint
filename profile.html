@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://kit.fontawesome.com/62301ddb39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dasrk.css">
+</head>
+<body>
+    <section class="profile-settings">
+      <aside class="sidebar" id="sidebar">
+        <button id="toggleBtn"><i class="fa-brands fa-pagelines"></i></button>
+        <nav>
+          <ul>
+            <li>
+              <span><a href="index.html"><i class="fa-solid fa-house"></i></span>
+              <span class="label">Home</span></a>
+            </li>
+            <li>
+              <span><a href="log.html"><i class="fa-solid fa-chart-pie"></i></span>
+              <span class="label">Statistics</span></a>
+            </li>
+            <li>
+              <span><a href="leaderboard.html"><i class="fa-solid fa-chart-column"></i></span>
+                <span class="label">Leaderboard</span></a>
+            </li>
+            <li>
+              <span><a href="Challenges.html"><i class="fa-solid fa-list-check"></i></span>
+              <span class="label">Challenges</span></a>
+            </li>
+            <li>
+              <span><a href="profile.html"><i class="fa-solid fa-user"></i></span>
+              <span class="label">Profile</span></a>
+            </li>
+            <li>
+                <button id="dark-mode" onclick="document.body.classList.toggle('dark-theme')" ><i class="fa-solid fa-moon"></i></button>
+                <span class="label">Dark-mode</span></a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- <div class="profile">
+        <h2>
+          Profile & Settings
+          <div class="coins">
+            <h2 id="amountOfCoins" >612</h2>
+          </div>
+        </h2>
+      </div> -->
+      <div class="profile">
+        <h2>Profile & Settings</h2>
+        <div class="coins">
+          <p id="amountOfCoins"><i class="fa-solid fa-leaf"></i>  612</p>
+        </div>
+      </div>
+        <p>Manage your account and preferences</p>
+      
+        <div class="settings-container">
+          <div class="profile-card">
+            <div class="avatar">M</div>
+            <h3>MITS</h3>
+            <p>Member since April 2025</p>
+            <div class="profile-stats">
+              <p><strong>285</strong> Total Eco-Points</p>
+              <p><strong>7 days</strong> Current Streak</p>
+              <p><strong>47.3 kg</strong> CO₂ Saved</p>
+            </div>
+            <button class="edit-profile-btn">Edit Profile</button>
+          </div>
+      
+          <div class="settings-panel">
+            <div class="card">
+              <h4>Account Settings</h4>
+              <p>Update your account information</p>
+              <input type="text" placeholder="Username" value="Yugesh" />
+              <input type="email" placeholder="Email" value="yugeshtg@example.com" />
+              <input type="text" placeholder="Location" value="Madanapalle" />
+            </div>
+    
+            <div class="card">
+              <h4>Preferences</h4>
+              <p>Customize your experience</p>
+      
+              <div class="preference-item">
+                <label>Dark Mode</label>
+                <input type="checkbox" />
+              </div>
+              <div class="preference-item">
+                <label>Notifications</label>
+                <input type="checkbox" checked />
+              </div>
+              <div class="preference-item">
+                <label>Daily Reminder</label>
+                <input type="checkbox" checked />
+              </div>
+      
+              <button class="save-btn">Save Changes</button>
+            </div>
+          </div>
+        </div>
+        <section class="rewards-section">
+          <div class="rewards-container">
+            <h2>Rewards & Vouchers</h2>
+            <p class="subtitle">Redeem your eco-coins for exclusive rewards</p>
+        
+            <div class="rewards-grid">
+              <!-- Eco-Friendly Store Discount -->
+              <div class="reward-card">
+                <div class="info">
+                  <h3>Eco-Friendly Store Discount</h3>
+                  <p>Get 15% off on sustainable products</p>
+                  <p><strong>100 eco-coins</strong></p>
+                </div>
+                <br>
+                <div class="badge blue">15% OFF</div>
+                <button class="redeem-btn">Redeem</button>
+              </div>
+        
+              <!-- Plant a Tree -->
+              <div class="reward-card">
+                <div class="info">
+                  <h3>Plant a Tree</h3>
+                  <p>We'll plant a tree in your name</p>
+                  <p><strong>200 eco-coins</strong></p>
+                </div>
+                <div class="badge green">Eco-Coins</div>
+                <button class="redeem-btn">Redeem</button>
+              </div>
+        
+              <!-- Public Transport Pass -->
+              <div class="reward-card">
+                <div class="info">
+                  <h3>Public Transport Pass</h3>
+                  <p>One day free pass for public transport</p>
+                  <p><strong>150 eco-coins</strong></p>
+                </div>
+                <div class="badge blue">1 DAY</div>
+                <button class="redeem-btn">Redeem</button>
+              </div>
+        
+              <!-- Solar Product Voucher -->
+              <div class="reward-card">
+                <div class="info">
+                  <h3>Solar Product Voucher</h3>
+                  <p>₹500 off on solar products</p>
+                  <p><strong>300 eco-coins</strong></p>
+                </div>
+                <div class="badge green">₹500</div>
+                <button class="redeem-btn">Redeem</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      
+      <script src="app.js"></script>
+</body>
+</html

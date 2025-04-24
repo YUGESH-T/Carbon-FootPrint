@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f5fdf6;
+  color: #222;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 100vh;
+  background-color: #27ae60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  transition: width 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.expanded {
+  width: 200px;
+}
+
+.sidebar button#toggleBtn {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  gap: 10px;
+  width: 100%;
+}
+
+.label{
+  color: white;
+  padding-left: 8px;  
+}
+.sidebar .label {
+  display: none;
+  font-size: 0.9rem;
+}
+
+.sidebar.expanded .label {
+  display: inline;
+}
+
+/* Main Section */
+.profile-settings {
+  margin-left: 72px;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.sidebar.expanded + .profile-settings {
+  margin-left: 200px;
+}
+
+.profile-settings h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-settings p {
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Layout */
+.settings-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Profile Card */
+.profile-card {
+  flex: 1;
+  max-width: 300px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: #1ca65c;
+  color: rgb(0, 0, 0);
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.profile-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.profile-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.profile-stats {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.edit-profile-btn {
+  background-color: #1ca65c;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Settings Panel */
+.settings-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.settings-panel .card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings-panel h4 {
+  margin-bottom: 0.5rem;
+}
+
+.settings-panel input[type="text"],
+.settings-panel input[type="email"] {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.preference-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.save-btn {
+  margin-top: 1rem;
+  background-color: #1ca65c;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.rewards-section {
+  background: #f7fdf8;
+  padding: 3rem 1.5rem;
+}
+
+.rewards-container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+.rewards-container h2 {
+  margin-bottom: 0.2rem;
+}
+
+.rewards-container .subtitle {
+  margin-top: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.reward-card {
+  background: #fefefe;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+  position: relative;
+}
+
+.reward-card .info h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+}
+
+.reward-card .info p {
+  margin: 0.2rem 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+}
+
+.badge.blue {
+  background: #d4ecf7;
+  color: #1a6fa8;
+}
+
+.badge.green {
+  background: #e3f7e8;
+  color: #1d824c;
+}
+
+.redeem-btn {
+  margin-top: 1rem;
+  background-color: #d9f5de;
+  color: #1d824c;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.redeem-btn:hover {
+  background-color: #c5f0cf;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settings-container {
+    flex-direction: column;
+  }
+
+  .profile-settings {
+    padding: 1rem;
+  }
+
+  .profile-card {
+    max-width: 100%;
+  }
+}
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px; 
+}
+
+.profile h2 {
+  margin: 0;
+}
+
+#amountOfCoins{
+  padding-top: 20px;
+  padding-right: 10px;
+  font-size: larger;
+  background-color: #d9f5deb3; 
+  border-radius: 2px;
+  color:#1d824c;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+}
+
